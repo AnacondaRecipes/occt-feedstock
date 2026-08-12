@@ -34,13 +34,13 @@ requirements:
     - cmake
     - ninja
   host:
-    - expat
-    - fontconfig
-    - freetype
+    - expat {{ expat }}
+    - fontconfig {{ fontconfig }}
+    - freetype {{ freetype }}
     - libgl-devel                   # [linux]
     - rapidjson
     - tbb-devel                     # [variant=='all']
-    - vtk                           # [variant=='all']
+    - vtk  {{ vtk_base }}           # [variant=='all']
     - xorg-libx11                   # [linux]
     - xorg-libxt                    # [linux]
     - xorg-xorgproto                # [linux]
@@ -73,7 +73,7 @@ about:
     is an open source software development platform for 3D CAD,
     CAM, CAE, etc. that is developed and supported by Open Cascade SAS.
   doc_url: https://www.opencascade.com/content/documentation
-  dev_url: http://git.dev.opencascade.org/gitweb/?p=occt.git
+  dev_url: https://github.com/Open-Cascade-SAS/OCCT/
 
 extra:
   recipe-maintainers:
