@@ -1,5 +1,5 @@
 {% set name = "occt" %}
-{% set version = "8.0.1" %}
+{% set version = "7.9.3" %}
 {% set build = 0 %}
 
 {% set build = build + 100 %}   # [variant == "novtk"]
@@ -11,9 +11,8 @@ package:
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
   url: https://github.com/Open-Cascade-SAS/OCCT/archive/refs/tags/V{{ version.replace(".", "_") }}.tar.gz
-  sha256: 0d6913eae4bcc09a3653ceced6dda1aec11c35a1513d4c06762c9b002092c68a
+  sha256: 5ecf094ec6b12d5413dfb851d8c3590c354058aee556e32e408bdfbf8c357d57
   patches:
     - patches/switch-vtk-freetype-cmake-order.patch
 
@@ -37,7 +36,6 @@ requirements:
   host:
     - expat
     - fontconfig
-    - freeimage
     - freetype
     - libgl-devel                   # [linux]
     - rapidjson
@@ -50,7 +48,6 @@ requirements:
     - xorg-libxi                    # [linux]
   run:
     - freetype
-    - freeimage
     - fontconfig
     - xorg-libxt  # [linux]
     - rapidjson
